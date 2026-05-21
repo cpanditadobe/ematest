@@ -1,26 +1,27 @@
 /* Block: hero-banner */
 
-/* Full-width wrapper with dark background to simulate inverse section */
+/* Full-width edge-to-edge layout */
 .hero-banner-wrapper {
   max-width: unset !important;
-  padding: 128px 24px !important;
-  background-color: var(--dark-color);
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #000;
 }
 
-/* Block container - acts as the rounded card with image background */
+/* Block container - full-width with tall image */
 .hero-banner {
   position: relative;
-  min-height: 480px;
-  border-radius: 20px;
+  min-height: 560px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
 }
 
-/* Gradient overlay via pseudo-element */
+/* Gradient overlay */
 .hero-banner::after {
   content: '';
   position: absolute;
@@ -28,10 +29,9 @@
   z-index: 1;
   background-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 0%) 60%);
   pointer-events: none;
-  border-radius: 20px;
 }
 
-/* Row 1: image row - used as absolute background */
+/* Row 1: image row - absolute background */
 .hero-banner > div:first-child {
   position: absolute;
   inset: 0;
@@ -87,7 +87,6 @@
   margin: 16px 0 0;
 }
 
-/* Fix: remove default button-wrapper margin on the <p> containing the link */
 .hero-banner p:last-child {
   margin: 0;
 }
@@ -120,7 +119,7 @@
 /* Desktop styles */
 @media (width >= 900px) {
   .hero-banner {
-    min-height: 600px;
+    min-height: 70vh;
   }
 
   .hero-banner > div:last-child {
