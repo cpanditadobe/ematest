@@ -1,47 +1,129 @@
-.hero-split-container .hero-split-wrapper {
-  max-width: unset;
-  padding: 0;
+/* Block: hero-split */
+
+/* Wrapper needs full width within section */
+.hero-split-wrapper {
+  max-width: var(--content-max-width, 1200px) !important;
 }
 
 .hero-split {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  padding: 48px 24px;
 }
 
-.hero-split h1,
-.hero-split h2,
-.hero-split h3,
-.hero-split h4,
-.hero-split h5,
-.hero-split h6,
-.hero-split p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+/* Row layout - stack on mobile */
+.hero-split > div {
+  padding: 0;
+}
+
+/* Image cell (row 1) - paragraph wrapping for images */
+.hero-split > div:first-child > div > p {
+  margin: 0;
+  line-height: 0;
+}
+
+/* Image cell (row 1) - grid layout */
+.hero-split > div:first-child > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* Text cell (row 2) */
+.hero-split > div:last-child > div {
+  padding-top: 32px;
+}
+
+/* Images */
+.hero-split img {
+  object-fit: cover;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Headings */
+.hero-split h1 {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--heading-font-family);
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Text content paragraphs */
+.hero-split > div:last-child > div > p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 24px 0 0;
+}
+
+/* Button paragraphs display inline */
+.hero-split > div:last-child > div > p:nth-of-type(2),
+.hero-split > div:last-child > div > p:nth-of-type(3) {
+  display: inline-block;
+  margin: 32px 16px 0 0;
+}
+
+/* Button paragraphs */
+.hero-split > div:last-child > div > p a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid var(--dark-color);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Primary button (first link) */
+.hero-split > div:last-child > div > p:nth-of-type(2) a {
+  background-color: var(--dark-color);
   color: var(--background-color);
+  margin-right: 16px;
 }
 
-.hero-split.no-image * {
+/* Secondary button (second link) */
+.hero-split > div:last-child > div > p:nth-of-type(3) a {
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
-.hero-split picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero-split > div:last-child > div > p:nth-of-type(2) a:hover,
+.hero-split > div:last-child > div > p:nth-of-type(3) a:hover {
+  opacity: 0.85;
 }
 
-.hero-split img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
+/* Desktop: two-column layout */
 @media (width >= 900px) {
   .hero-split {
-    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    padding: 48px 0;
+  }
+
+  .hero-split h1 {
+    font-size: 56px;
+    line-height: 61.6px;
+  }
+
+  /* Text content (row 2 in DOM) displays in left column */
+  .hero-split > div:last-child {
+    order: -1;
+  }
+
+  .hero-split > div:last-child > div {
+    padding-top: 0;
   }
 }
