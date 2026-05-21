@@ -1,7 +1,6 @@
 {
   "type": "da",
-  "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+  "contentHostUrl": "https://content.da.live/cpanditadobe/ematest/",
   "previewOrg": "cpanditadobe",
-  "previewSite": "ematest",
-  "contentHostUrl": "https://content.da.live/cpanditadobe/ematest/"
+  "previewSite": "ematest"
 }
