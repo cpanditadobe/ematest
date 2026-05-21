@@ -1,0 +1,137 @@
+/* Block: hero-banner */
+
+/* Full-width edge-to-edge layout */
+.hero-banner-wrapper {
+  max-width: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #000;
+}
+
+/* Block container - full-width with tall image */
+.hero-banner {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Gradient overlay */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 0%) 60%);
+  pointer-events: none;
+}
+
+/* Row 1: image row - absolute background */
+.hero-banner > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Row 2: content row */
+.hero-banner > div:last-child {
+  position: relative;
+  z-index: 2;
+  padding: 40px 24px;
+}
+
+.hero-banner > div:first-child > div {
+  height: 100%;
+}
+
+.hero-banner > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-banner > div:first-child img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-banner > div:last-child > div {
+  max-width: 672px;
+}
+
+/* Heading */
+.hero-banner h2 {
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* Paragraph */
+.hero-banner p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: #fff;
+  margin: 16px 0 0;
+}
+
+.hero-banner p:last-child {
+  margin: 0;
+}
+
+/* Button link */
+.hero-banner a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: var(--dark-color);
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: none;
+  margin-top: 32px;
+}
+
+.hero-banner a:hover {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+/* Desktop styles */
+@media (width >= 900px) {
+  .hero-banner {
+    min-height: 70vh;
+  }
+
+  .hero-banner > div:last-child {
+    padding: 64px;
+  }
+
+  .hero-banner > div:last-child > div {
+    max-width: 672px;
+  }
+
+  .hero-banner h2 {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+  }
+}
