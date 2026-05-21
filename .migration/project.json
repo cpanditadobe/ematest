@@ -1,0 +1,7 @@
+{
+  "type": "da",
+  "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+  "previewOrg": "cpanditadobe",
+  "previewSite": "ematest",
+  "contentHostUrl": "https://content.da.live/cpanditadobe/ematest/"
+}

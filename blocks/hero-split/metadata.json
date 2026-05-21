@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-split",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-21T09:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large",
+    "structure": "heading + subheading + 2 CTAs + image grid"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + 2 CTAs + 3 images",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "landing pages with text and image grids",
+      "split-layout hero with CTAs and multiple images"
+    ],
+    "notSuitableFor": [
+      "hero sections with single background image",
+      "minimal text-only heroes",
+      "dark background heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-21T09:37:00.000Z"
+  }
+}
