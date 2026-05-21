@@ -10,7 +10,7 @@
 /* Block container - acts as the rounded card with image background */
 .hero-banner {
   position: relative;
-  min-height: 400px;
+  min-height: 480px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -120,7 +120,7 @@
 /* Desktop styles */
 @media (width >= 900px) {
   .hero-banner {
-    min-height: 448px;
+    min-height: 600px;
   }
 
   .hero-banner > div:last-child {
