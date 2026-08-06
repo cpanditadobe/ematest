@@ -11,36 +11,48 @@
   padding: 48px 24px;
 }
 
-/* Row layout - stack on mobile */
+/* Rows are full width and stack by default (mobile-first) */
 .hero-split > div {
   padding: 0;
 }
 
-/* Image cell (row 1) - paragraph wrapping for images */
-.hero-split > div:first-child > div > p {
-  margin: 0;
-  line-height: 0;
-}
-
-/* Image cell (row 1) - grid layout */
+/* Image cell (row 1) - grid the pictures into a tiled gallery.
+   The authored pictures are wrapped in a single <p>; display:contents
+   lets the <picture> elements become direct grid items so they tile. */
 .hero-split > div:first-child > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
-/* Text cell (row 2) */
-.hero-split > div:last-child > div {
-  padding-top: 32px;
+.hero-split > div:first-child > div > p {
+  display: contents;
+  margin: 0;
 }
 
 /* Images */
+.hero-split picture {
+  display: block;
+  line-height: 0;
+}
+
+/* First image is the hero - spans the full width above the tiled pair */
+.hero-split > div:first-child picture:first-of-type {
+  grid-column: 1 / -1;
+}
+
 .hero-split img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 20px;
-  width: 100%;
-  height: 100%;
   display: block;
+}
+
+/* Text cell (row 2) - appears below the images on mobile/tablet */
+.hero-split > div:last-child > div {
+  padding-top: 32px;
 }
 
 /* Headings */
@@ -103,7 +115,18 @@
   opacity: 0.85;
 }
 
-/* Desktop: two-column layout */
+/* Tablet: slightly larger gap between image tiles */
+@media (width >= 600px) {
+  .hero-split {
+    padding: 56px 32px;
+  }
+
+  .hero-split > div:first-child > div {
+    gap: 12px;
+  }
+}
+
+/* Desktop: two-column layout with text beside the image gallery */
 @media (width >= 900px) {
   .hero-split {
     display: grid;
