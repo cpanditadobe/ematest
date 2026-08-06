@@ -1,6 +1,10 @@
 {
   "type": "da",
-  "contentHostUrl": "https://content.da.live/cpanditadobe/ematest/",
-  "previewOrg": "cpanditadobe",
-  "previewSite": "ematest"
+  "sites": {
+    "ematest": {
+      "contentHostUrl": "https://content.da.live/cpanditadobe/ematest/",
+      "previewOrg": "cpanditadobe",
+      "previewSite": "ematest"
+    }
+  }
 }
